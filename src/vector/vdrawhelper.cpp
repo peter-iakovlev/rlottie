@@ -874,7 +874,7 @@ void VSpanData::updateSpanFunc()
     }
 }
 
-#if !defined(__SSE2__) && (!defined(__ARM_NEON__) || !defined(LOTTIE_DISABLE_ARM_NEON))
+#if !defined(__SSE2__) && (!defined(__ARM_NEON__) || defined(LOTTIE_DISABLE_ARM_NEON))
 void memfill32(uint32_t *dest, uint32_t value, int length)
 {
     int n;
